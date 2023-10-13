@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Productos</title>
+	<link href="estilos.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div><a class="button" href="/productos/export-csv">Exportar CSV</a></div>
+	<div class="container mt-4">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Tipo</th>
+					<th>SKU</th>
+					<th>Nombre</th>
+					<th>Publicado</th>
+					<th>¿Está destacado?</th>
+					<th>Visible en catalogo</th>
+					<th>Descripción Corta</th>
+					<th>Descripción Larga</th>
+					<th>Día de inicio de oferta</th>
+					<th>Día de fin de oferta</th>
+					<th>Estado de impuesto</th>
+					<th>Clase de impuesto</th>
+					<th>¿En inventario?</th>
+					<th>Inventario</th>
+					<th>Cantidad inventario bajo</th>
+					<th>Permitir reservas</th>
+					<th>Venta individual</th>
+					<th>Peso</th>
+					<th>Longitud</th>
+					<th>Ancho</th>
+					<th>Altura</th>
+					<th>Valoracion cliente</th>
+					<th>Nota compra</th>
+					<th>Precio rebajado</th>
+					<th>Precio</th>
+					<th>Categorias</th>
+					<th>Etiquetas</th>
+					<th>Clase de envio</th>
+					<th>Imagenes</th>
+					<th>Posicion</th>
+					<th>Especificaciones</th>
+					<th>Descripcion Especificaciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="productos:${prodService}">
+					<td></td>
+					<td th:text=${productos.d_tipo}></td>
+					<td th:text=${productos.id_sku}></td>
+					<td th:text=${productos.d_nombre_sku}></td>
+					<td th:text=${productos.b_publicar}></td>
+					<td th:text=${productos.b_destacar}></td>
+					<td th:text=${productos.d_visibilidad}></td>
+					<td th:text=${productos.d_descripcion}></td>
+					<td th:text=${productos.d_caracteristicas}></td>
+					<td th:text=${productos.f_fecha_inicio_rebaja}></td>
+					<td th:text=${productos.f_fecha_fin_rebaja}></td>
+					<td th:text=${productos.d_impuesto}></td>
+					<td></td>
+					<td th:text=${productos.b_en_catalogo}></td>
+					<td th:text=${productos.n_inventario_cant}></td>
+					<td th:text=${productos.n_cant_inventario_bajo}></td>
+					<td th:text=${productos.b_permitir_reservar}></td>
+					<td th:text=${productos.b_venta_individual}></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td th:text=${productos.b_valoracion_clientes}></td>
+					<td></td>
+					<td th:text=${productos.n_precio_rebaja}></td>
+					<td th:text=${productos.n_precio_publico}></td>
+					<td th:text=${productos.d_categoria_principal}></td>
+					<td></td>
+					<td></td>
+					<td th:text=${productos.d_url}></td>
+					<td></td>
+					<td th:text=${productos.d_nombre_especificacion}></td>
+					<td th:text=${productos.d_valor_especificacion}></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>
